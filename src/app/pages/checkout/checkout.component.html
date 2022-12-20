@@ -1,0 +1,32 @@
+
+<div class="card">
+    <div class="card-body">
+        <h5>Finalizar Pedido</h5>
+        <hr />
+ 
+        <table class="table table-sm mb-2">
+            <thead>
+                <tr>
+                    <th>Nome do Cliente:</th>
+                    <th>Email:</th>
+                    <th>Telefone:</th>
+                    <th>Operações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngIf="auth">
+                    <td>{{auth.nome | uppercase}}</td>
+                    <td>{{auth.email | lowercase}}</td>
+                    <td>{{auth.telefone }}</td>
+                    <td>
+                        <button class="btn btn-secondary btn-sm"
+                            (click)="logout()">
+                            Sair
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+ 
+    </div>
+</div>

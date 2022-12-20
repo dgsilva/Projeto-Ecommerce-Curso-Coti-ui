@@ -1,0 +1,60 @@
+<h5>Carrinho de compras</h5>
+ 
+<div *ngIf="dados.quantidadeItens == 0" class="alert alert-info">
+    <strong>Não há produtos em seu carrinho de compras</strong>
+</div>
+ 
+<div class="card mb-3" *ngIf="dados.quantidadeItens > 0">
+    <div class="card-body">
+        <div class="row">
+            <div class="col-md-6">
+                <div>
+                    Valor total: <strong>{{dados.valorTotal | currency: 'R$ '}}</strong>
+                </div>
+                <div>
+                    Quantidade de itens: <strong>{{dados.quantidadeItens}}</strong>
+                </div>
+            </div>
+            <div class="col-md-6 text-end">
+                <button class="btn btn-outline-danger" (click)="limpar()">
+                    Limpar carrinho
+                </button>
+                &nbsp;
+                <a [routerLink]="['/acessar-conta']" class="btn btn-outline-success">
+                    Finalizar Pedido
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+ 
+<table class="table table-sm" *ngIf="dados.quantidadeItens > 0">
+    <thead>
+        <tr>
+            <th>Foto</th>
+            <th>Nome do produto</th>
+            <th>Preço</th>
+            <th>Quantidade</th>
+            <th>Total</th>
+            <th>Operações</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of dados.itens">
+            <td class="text-center">
+                <img src="data:image/png;base64,{{item.foto}}" height="50" />
+            </td>
+            <td>{{item.nome}}</td>
+            <td>{{item.preco | currency : 'R$ '}}</td>
+            <td>{{item.quantidade}}</td>
+            <td>{{item.total | currency : 'R$ '}}</td>
+            <td>
+                <button class="btn btn-outline-danger btn-sm" (click)="remover(item)">-</button>
+                &nbsp;
+                <button class="btn btn-outline-primary btn-sm" (click)="adicionar(item)">+</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+

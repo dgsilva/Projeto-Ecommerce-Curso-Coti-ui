@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "nome": "Smartphone Samsung Galaxy",
+        "preco": 799.00,
+        "quantidade": 10,
+        "descricao": "Smartphone Samsung Galaxy A03 64GB 4GB RAM Processador Octa Core 48MP + 2MP 5MP Tela Infinita de 6.5 Dual Chip Android - Preto",
+        "foto": "https://images-americanas.b2w.io/produtos/01/00/img/4533174/8/4533174812_1GG.jpg",
+        "categoria": {
+            "id": 1,
+            "nome": "Celulares"
+        }
+    },
+    {
+        "id": 2,
+        "nome": "Notebook Asus Zenbook",
+        "preco": 5899.99,
+        "quantidade": 10,
+        "descricao": "Notebook Asus Zenbook Intel Core i7-105120U 8GB 256GB SSD W10 14 FHD Prata UX434FAC-A6339T",
+        "foto": "https://images-americanas.b2w.io/produtos/01/00/img/1776840/6/1776840621_1SZ.jpg",
+        "categoria": {
+            "id": 2,
+            "nome": "Informática"
+        }
+    },
+    {
+        "id": 3,
+        "nome": "Smart TV 50 UHD Samsung",
+        "preco": 2499.99,
+        "quantidade": 10,
+        "descricao": "Smart TV 50 UHD Samsung 4k 50AU7700 Processador Crystal 4k Tela Sem Limites Visual Livre de Cabos Alexa Built In",
+        "foto": "https://images-americanas.b2w.io/produtos/01/00/img/3069506/1/3069506190_1SZ.jpg",
+        "categoria": {
+            "id": 3,
+            "nome": "Eletrônicos"
+        }
+    }
+]

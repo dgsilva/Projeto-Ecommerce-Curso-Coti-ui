@@ -1,0 +1,60 @@
+<div class="row mt-3">
+    <div class="col-md-4 offset-md-4">
+        <div class="card">
+            <img class="card-img-top" src="https://files.tecnoblog.net/wp-content/uploads/2019/06/2fa.jpg"/>
+            <div class="card-body">
+ 
+                <div *ngIf="mensagem" class="mb-3 mt-3 alert alert-danger alert-dismissible fade show" role="alert">
+                    <button type="button" (click)="mensagem = ''" class="btn-close" aria-label="Close"></button>
+                    <strong>{{mensagem}}</strong>
+                </div>
+ 
+                <form [formGroup]="formLogin" (ngSubmit)="onSubmit()">
+ 
+                    <div class="mb-2">
+                        <label>Email de Acesso:</label>
+                        <input type="text" class="form-control" formControlName="email"/>
+                        <div class="text-danger">
+                            <span *ngIf="form.email.touched && form.email.invalid">
+                                <span *ngIf="form.email.errors.required">
+                                    Por favor, informe seu email de acesso.
+                                </span>
+                                <span *ngIf="form.email.errors.email">
+                                    Por favor, informe um email válido.
+                                </span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="mb-2">
+                        <label>Senha de Acesso:</label>
+                        <input type="password" class="form-control" formControlName="senha"/>
+                        <div class="text-danger">
+                            <span *ngIf="form.senha.touched && form.senha.invalid">
+                                <span *ngIf="form.senha.errors.required">
+                                    Por favor, informe sua senha de acesso.
+                                </span>
+                                <span *ngIf="form.senha.errors.minlength">
+                                    Por favor, informe no mínimo 8 caracteres.
+                                </span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="mb-2">
+                        <div class="d-grid">
+                            <input [disabled]="!formLogin.valid" type="submit" value="Acessar Conta" class="btn btn-primary"/>
+                        </div>
+                    </div>
+                    <div class="mb-2">
+                        <div class="d-grid">
+                            <a [routerLink]="['/cadastrar-conta']" class="btn btn-light">
+                                Não possui conta? <strong>Cadastre-se aqui!</strong>
+                            </a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+ 
+

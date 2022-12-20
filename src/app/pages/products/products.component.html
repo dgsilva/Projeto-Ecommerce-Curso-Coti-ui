@@ -1,0 +1,48 @@
+<div class="row mb-3">
+    <div class="col-md-4">
+        <select class="form-select" (change)="onChange($event)">
+            <option value="0">Todas as categorias</option>
+            <option *ngFor="let item of categorias" value="{{item.id}}">
+                {{item.nome | uppercase}}
+            </option>
+        </select>
+    </div>
+</div>
+ 
+<div class="row mb-5">
+ 
+    <div class="col-md-4" *ngFor="let item of produtos">
+        <div class="card">
+            <div class="card-body">
+                <div class="text-center">
+ 
+                    <img src="data:image/png;base64,{{item.foto}}" height="200" />
+ 
+                    <h4 class="mt-3">{{item.nome}}</h4>
+ 
+                    <h5>{{item.preco | currency : 'R$' }}</h5>
+ 
+                    <p class="card-text">
+                        Quantidade disponível: {{item.quantidade}}
+                    </p>
+ 
+                    <div class="badge bg-secondary">
+                        {{item.categoria.nome}}
+                    </div>
+ 
+                    <p class="mt-2" style="min-height: 80px;">
+                        <small>{{item.descricao}}</small>
+                    </p>
+ 
+                    <div class="d-grid">
+                        <button (click)="onClick(item)" class="btn btn-primary">
+                            Comprar
+                        </button>
+                    </div>
+ 
+                </div>
+            </div>
+        </div>
+    </div>
+ 
+</div>
